@@ -12,10 +12,12 @@ export default function Weather(props) {
       <div className='flex-grow ml-auto max-w-xl'>
         <div className='backdrop-brightness-75 w-full h-screen'>
 
+          {props.weatherData.error?.code === 1006 && (
+            <div className='w-full flex justify-end p-3 bottom-0 fixed'>
+              <Notification text="That is unavailable" />
+            </div>
+          )}
 
-          <div className='w-full flex justify-end p-3 bottom-0 fixed'>
-            <Notification text="That is unavailable" />
-          </div>
 
 
 
