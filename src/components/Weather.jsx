@@ -2,6 +2,7 @@ import React from 'react'
 import { AiOutlineSearch } from "react-icons/ai";
 import BasicInfo from './BasicInfo';
 import Card from './Card';
+import Notification from './Notification';
 
 export default function Weather(props) {
   return (
@@ -10,6 +11,13 @@ export default function Weather(props) {
     <div>
       <div className='flex-grow ml-auto max-w-xl'>
         <div className='backdrop-brightness-75 w-full h-screen'>
+
+
+          <div className='w-full flex justify-end p-3 bottom-0 fixed'>
+            <Notification text="That is unavailable" />
+          </div>
+
+
 
           <div>
 
@@ -22,15 +30,15 @@ export default function Weather(props) {
 
             {/* cards go here */}
             <div>
-              <Card weatherData={props.weatherData} dataType="overview"/>
-              <Card weatherData={props.weatherData} dataType="wind"/>
-              <Card weatherData={props.weatherData} dataType="atmosphericConditions"/>
+              <Card weatherData={props.weatherData} dataType="overview" />
+              <Card weatherData={props.weatherData} dataType="wind" />
+              <Card weatherData={props.weatherData} dataType="atmosphericConditions" />
             </div>
 
           </div>
         </div>
       </div>
-      <BasicInfo city={props.city} weatherData={props.weatherData}/>
+      <BasicInfo city={props.city} weatherData={props.weatherData} />
     </div>
 
 
