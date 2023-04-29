@@ -1,24 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineSearch } from "react-icons/ai";
 import BasicInfo from './BasicInfo';
 import Card from './Card';
 import Notification from './Notification';
+import { motion } from "framer-motion";
 
 export default function Weather(props) {
-  return (
 
+  return (
 
     <div>
       <div className='flex-grow ml-auto max-w-xl'>
         <div className='backdrop-brightness-75 w-full h-screen'>
 
           {props.weatherData.error?.code === 1006 && (
-            <div className='w-full flex justify-end p-3 bottom-0 fixed'>
+            
+            <motion.div className='w-full flex justify-end p-3 bottom-0 fixed' 
+            initial={{ y:-10, opacity: 0, scale:0 }}
+            animate={{ opacity: 1, scale: 1}}
+            exit={{ scale: 0, opacity: 1 }}
+            transition={{ duration: 0.5}}
+            >
               <Notification text="That is unavailable" />
-            </div>
+            </motion.div>
           )}
-
-
 
 
           <div>
