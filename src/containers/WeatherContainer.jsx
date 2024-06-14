@@ -4,7 +4,7 @@ import Weather from '../components/Weather'
 
 export default function WeatherContainer() {
 
-    const API_KEY = ""
+    const API_KEY = process.env.REACT_APP_API_KEY;
 
     const [city, setCity] = useState("")
     const [weatherData, setWeatherData] = useState({})
