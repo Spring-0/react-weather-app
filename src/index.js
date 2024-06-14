@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
 import WeatherApp from './components/WeatherApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -10,5 +9,3 @@ root.render(
     <WeatherApp />
   </React.StrictMode>
 );
-
-reportWebVitals();
